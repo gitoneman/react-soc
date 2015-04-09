@@ -8,7 +8,9 @@
  */
 
 var React = require('react');
+
 var Menu = require('./components/menu/menu.react');
+var SideMenu = require('./components/sideMenu/sideMenu');
 var Dashboard = require('./components/dashboard/dashboard.react');
 var Report = require('./components/report/report.react');
 var Events = require('./components/events/events.react');
@@ -23,14 +25,20 @@ var Link = Router.Link;
 var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 
+var menu = require('./menu.config');
+  
+
 var App = React.createClass({
   render: function () {
     return (
-      <div>
+      <div className="g-doc">
        	<Menu />
-
-        {/* this is the important part */}
-        <RouteHandler {...this.props}/>
+        <div className="g-sd">
+            <SideMenu data={menu}/>
+        </div>
+        <div className="g-mn">
+            <RouteHandler {...this.props}/>
+        </div>
       </div>
     );
   }
@@ -43,7 +51,7 @@ var routes = (
     	<Route name="event" path=":eventId" handler={Event}/>
     </Route>
     <Route name="dashboard" handler={Dashboard}/>
-    <DefaultRoute handler={Dashboard}/>
+    
   </Route>
 );
 

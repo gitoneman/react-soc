@@ -13,18 +13,48 @@
  * We are not changing from display:none, but rather re-rendering instead.
  * Therefore this needs to be displayed normally by default.
  */
-#todo-list li .edit {
-  display: inline;
+html,body {
+	height: 100%;
+}
+.g-doc {
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+}
+.g-sd {
+	position: absolute;
+	top: 52px;
+	bottom: 0;
+	left: 0;
+	width: 220px;
+}
+.g-mn {
+	position: absolute;
+	top: 52px;
+	bottom: 0;
+	left: 220px;
+	right: 0;
 }
 .navbar-default .navbar-nav>li>a.active, .navbar-default .navbar-nav>li>a.active:hover, .navbar-default .navbar-nav>li>a.active:focus{
 	color: #555;
 	background-color: #E7E7E7;
 }
-
-.submenu {
-	width: 200px;
-	height: 400px;
+nav {
+	margin-bottom: 0!important;
 }
+
+.row {
+	margin: 0;
+}
+.sideMenu {
+	height: 400px;
+	padding: 0;
+}
+
+/*component accordion start*/
 .accordion {
 	width: 100%;
 	height: 100%;
@@ -48,10 +78,24 @@
 .accordion-item-content.v-enter {
 	display: block;
 }
+.accordion-item-content.v-leave {
+	
+}
 .accordion-item-content li {
+	
+}
+.accordion-item-content li a {
+	display: block;
+	width:100%;
+	height: 100%;
 	padding: 5px 15px;
 }
+.accordion-item-content li a.active {
+	color: #fff;
+	background-color: #4BD9F2;
+}
 .accordion-item-content li:hover {
-	background: #ddd;
+	background: #eee;
 	cursor: pointer;
 }
+/*component accordion end*/

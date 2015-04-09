@@ -18,9 +18,7 @@ var menu = React.createClass({
 				</div>
 				<div className="collapse navbar-collapse navbar-ex1-collapse">
 					<ul className="nav navbar-nav">
-						<li><Link to="dashboard">Dashboard</Link></li>
-						<li><Link to="report">report</Link></li>
-						<li><Link to="events">events</Link></li>
+						
 						
 					</ul>					
 				</div>
