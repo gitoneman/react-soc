@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "browserify": "^6.2.0",
+    "classnames": "^1.2.0",
     "envify": "^3.0.0",
     "jest-cli": "~0.1.17",
     "react-bootstrap": "^0.20.2",

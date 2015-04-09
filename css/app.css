@@ -99,3 +99,8 @@ nav {
 	cursor: pointer;
 }
 /*component accordion end*/
+
+.toolbar {
+	padding: 10px;
+	background: #F8F8F8;
+}
