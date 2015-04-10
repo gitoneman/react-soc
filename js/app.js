@@ -12,6 +12,7 @@ var React = require('react');
 var Menu = require('./components/menu/menu.react');
 var SideMenu = require('./components/sideMenu/sideMenu');
 var Dashboard = require('./components/dashboard/dashboard.react');
+var System = require('./components/system/system.react');
 var Report = require('./components/report/report.react');
 var Events = require('./components/events/events.react');
 var Event = require('./components/events/components/event.react');
@@ -24,6 +25,7 @@ var DefaultRoute = Router.DefaultRoute;
 var Link = Router.Link;
 var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
+var Redirect = Router.Redirect;
 
 var menu = require('./menu.config');
   
@@ -51,7 +53,8 @@ var routes = (
     	<Route name="event" path=":eventId" handler={Event}/>
     </Route>
     <Route name="dashboard" handler={Dashboard}/>
-    
+    <Route name="system" handler={System}/>
+    <Redirect to="system"/>
   </Route>
 );
 

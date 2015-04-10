@@ -38,16 +38,15 @@ html,body {
 	left: 220px;
 	right: 0;
 }
+.g-cnt {
+	padding: 10px;
+}
 .navbar-default .navbar-nav>li>a.active, .navbar-default .navbar-nav>li>a.active:hover, .navbar-default .navbar-nav>li>a.active:focus{
 	color: #555;
 	background-color: #E7E7E7;
 }
 nav {
 	margin-bottom: 0!important;
-}
-
-.row {
-	margin: 0;
 }
 .sideMenu {
 	height: 400px;
@@ -103,4 +102,18 @@ nav {
 .toolbar {
 	padding: 10px;
 	background: #F8F8F8;
+	overflow: hidden;
+}
+.dashboard-work {
+	padding: 10px;
+}
+.chart-container {
+	height: 300px;
+}
+
+.f-mr10 {
+	margin-right: 10px;
+}
+.f-mr5 {
+	margin-right: 5px;
 }

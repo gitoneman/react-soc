@@ -1,20 +1,26 @@
 var menu = {
-  "我的菜单":[
+  "首页":[
     {
       name:"dashboard",
       href:"dashboard"
     }
   ],
-  "我的菜单二":[
+  "统计报表":[
     {
       name:"report",
       href:"report"
     }
   ],
-  "我的菜单三":[
+  "事件管理":[
     {
       name:"events",
       href:"events"
+    }
+  ],
+  "系统管理":[
+    {
+      name:"system",
+      href:"system"
     }
   ]
 }
