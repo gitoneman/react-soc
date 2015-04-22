@@ -13,6 +13,7 @@ var Menu = require('./components/menu/menu.react');
 var SideMenu = require('./components/sideMenu/sideMenu');
 var Dashboard = require('./components/dashboard/dashboard.react');
 var System = require('./components/system/system.react');
+var Cpt = require('./components/Cpt/Cpt.react');
 var Report = require('./components/report/report.react');
 var Events = require('./components/events/events.react');
 var Event = require('./components/events/components/event.react');
@@ -54,6 +55,7 @@ var routes = (
     </Route>
     <Route name="dashboard" handler={Dashboard}/>
     <Route name="system" handler={System}/>
+    <Route name="component" handler={Cpt}/>
     <Redirect to="system"/>
   </Route>
 );

@@ -18,6 +18,8 @@ var Chart = require('../../common/charts/charts.react')
 var systemStore = require('./store/systemStore');
 var Reactable = require('reactable');
 var Table = Reactable.Table;
+var Tr = Reactable.Tr;
+var Td = Reactable.Td;
 
 
 var system = React.createClass({
@@ -32,7 +34,6 @@ var system = React.createClass({
 
 	componentWillUnmount: function() {
 	    systemStore.removeChangeListener(this._onChange);
-	    alert(1)
 	},
 	render: function() {
 		var chartData = systemStore.getChartData();
@@ -100,6 +101,22 @@ var system = React.createClass({
 									        { Age: 23,  Name: 'Lee Salminen',Position: 'Developer' },
 									        { Age: 28, Position: 'Developer',Name:'sunny lu' },
 									    ]} />
+									    <Table className="table" id="table">
+									        <Tr>
+									            <Td column="Name" data="Griffin Smith">
+									                <b>Griffin Smith111</b>
+									            </Td>
+									            <Td column="Age">18</Td>
+									        </Tr>
+									        <Tr>
+									            <Td column="Name">Lee Salminen</Td>
+									            <Td column="Age">23</Td>
+									        </Tr>
+									        <Tr>
+									            <Td column="Position">Developer</Td>
+									            <Td column="Age">28</Td>
+									        </Tr>
+									    </Table>,
 							      	</Col>
 							    </Row>
 							</Grid>
