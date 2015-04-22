@@ -8,7 +8,6 @@ function makeConfig(defaultConfig,data){
 	config.legend.data = [];
 	config.xAxis[0].data = data.category;
 	_.each(data.series,function(item,i){
-		console.log(item)
 		config.series[i].name = item.name;
 		config.series[i].data = item.data;
 		config.legend.data.push(item.name);

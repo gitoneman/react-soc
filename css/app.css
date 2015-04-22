@@ -120,3 +120,8 @@ nav {
 .f-mr5 {
 	margin-right: 5px;
 }
+
+/*overwrite*/
+.pagination {
+	margin: 0;
+}
