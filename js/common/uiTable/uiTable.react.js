@@ -2,6 +2,7 @@ var React = require('react');
 var Row = require('./uiRow.react');
 var Head = require('./uiHead.react');
 var Pagination = require('../pagination/pagination.react');
+var $ = require('jquery');
 
 var uiTable = React.createClass({
 
@@ -24,7 +25,7 @@ var uiTable = React.createClass({
 						{rows}
 					</tbody>
 				</table>
-				<Pagination onClick={this._paginationClick} max={5}/>
+				<Pagination onClick={this._paginationClick} max={5} start={0}/>
 			</div>
 		);
 	},
@@ -33,6 +34,22 @@ var uiTable = React.createClass({
 	},
 	_paginationClick:function(o){
 		console.log(o)
+		this.getTableData();
+	},
+	getTableData:function(){
+		//TODO ajax to get data;
+		
+		// $.ajax({
+		// 	type:"get",
+		// 	url:"/aaa",
+		// 	success:function(){
+		//		this.forceUpdate();
+		// 	},
+		// 	error:function(){
+		// 		console.log(1)
+		// 	}
+		// })
+		this.forceUpdate();
 	}
 
 });
