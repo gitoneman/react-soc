@@ -3,9 +3,23 @@ var Row = require('./uiRow.react');
 var Head = require('./uiHead.react');
 var Pagination = require('../pagination/pagination.react');
 var $ = require('jquery');
+var classNames = require("classNames");
+var cx = require('react/lib/cx');
+
 
 var uiTable = React.createClass({
-
+	getInitialState: function() {
+		return {
+			limit: this.props.limit,
+			total: 0,
+			url: this.props.url,
+			pager: this.props.pager
+		};
+	},
+	componentWillMount: function() {
+		this.props.listener(this);
+		this.getTableData();
+	},
 	render: function() {
 		var col = this.props.col;
 		var clickFun = this._trClick;
@@ -17,7 +31,7 @@ var uiTable = React.createClass({
 		});
 		return (
 			<div>
-				<table className="table table-hover table-bordered">
+				<table className={classNames(this.props.style)}>
 					<thead>
 						<Head data={this.props.col} format={format}/>
 					</thead>
@@ -25,7 +39,12 @@ var uiTable = React.createClass({
 						{rows}
 					</tbody>
 				</table>
-				<Pagination onClick={this._paginationClick} max={5} start={0}/>
+				<div className={cx({
+					"hide":!this.state.pager 
+				})}>
+					<div className="pull-left">共{this.state.total}条</div>
+					<Pagination onClick={this._paginationClick} max={5}/>
+				</div>
 			</div>
 		);
 	},
@@ -33,23 +52,17 @@ var uiTable = React.createClass({
 		this.props.onClick && this.props.onClick(data);
 	},
 	_paginationClick:function(o){
-		console.log(o)
+
 		this.getTableData();
 	},
 	getTableData:function(){
-		//TODO ajax to get data;
-		
-		// $.ajax({
-		// 	type:"get",
-		// 	url:"/aaa",
-		// 	success:function(){
-		//		this.forceUpdate();
-		// 	},
-		// 	error:function(){
-		// 		console.log(1)
-		// 	}
-		// })
-		this.forceUpdate();
+		this.setState({
+			total:1 
+		});
+		alert(1)
+	},
+	refresh:function(){
+		this.getTableData();
 	}
 
 });

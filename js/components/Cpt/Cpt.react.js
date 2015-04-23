@@ -60,9 +60,13 @@ var Cpt = React.createClass({
 				        		data={this.state.tableData} 
 				        		col={this.state.tableCol}
 				        		format={this.state.format}
+				        		limit={5}
+				        		listener={this._tableListener}
+				        		url={"/1111"}
+				        		pager={true}
+				        		style={{"table":true, "table-hover":true, "table-bordered":true}}
 				        		onClick={this._trClick} />
 	        			</div>
-
 			        </TabPane>
 			        <TabPane eventKey={2} tab='表单'></TabPane>
 			        <TabPane eventKey={3} tab='弹出框'></TabPane>
@@ -79,6 +83,9 @@ var Cpt = React.createClass({
 	},
 	_trClick:function(data){
 		console.log(data)
+	},
+	_tableListener:function(o){
+		o.refresh();
 	}
 
 });
